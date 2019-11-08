@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: _title,
       home: BarActionWidget(),
 //      home: Scaffold(
@@ -73,7 +74,7 @@ class BarActionWidget extends StatelessWidget {
         // return object of type Dialog
         return AlertDialog(
           title: new Text("用量について"),
-          content: new Text("メサペイン最大初期量 45mg/日(分3) \n モルヒネ60~160mg/日→ メサペイン15mg/日 \n モルヒネ161~390mg/日→メサペイン30mg/日 \n モルヒネ391~600mg/日→メサペイン45mg/日 \n 高用量モルヒネ(>600mg)  →メサペイン換算比 20:1 \n モルヒネ600mg/日以下　  →メサペイン換算比5~10:1 \n\n 2019/3/120 ver 0.1 Developed By Dr.K.Katayama@TKH \n & KRysk"),
+          content: new Text("メサペイン最大初期量 45mg/日(分3) \n モルヒネ60~160mg/日→ メサペイン15mg/日 \n モルヒネ161~390mg/日→メサペイン30mg/日 \n モルヒネ391~600mg/日→メサペイン45mg/日 \n 高用量モルヒネ(>600mg)  →メサペイン換算比 20:1 \n モルヒネ600mg/日以下　  →メサペイン換算比5~10:1 \n\n 2019/3/120 ver 0.1 Developed By Dr.K.Katayama@TKH \n & KataRysk"),
           actions: <Widget>[
             // usually buttons at the bottom of the dialog
             new FlatButton(
@@ -356,7 +357,7 @@ class _PickerState extends State<MyStatefulWidget> {
           ),
           CupertinoButton(
             child: Text(currentOpioid),
-            color: CupertinoColors.activeGreen,
+            color: const Color(0xff6FAFAA),
             onPressed: ()async{
               await showModalBottomSheet<int>(
                 context: context,
